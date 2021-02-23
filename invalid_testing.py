@@ -23,7 +23,7 @@ req.add_header('content-type', 'application/json')
 response = urllib.request.urlopen(req)
 data_string = response.read()
 response_data = json.loads(data_string)
-current_time = datetime.datetime.now()
+current_time = datetime.datetime.now().date()
 output_events = []
 invalids = response_data["Response"]["Invalids"]
 if len(invalids) == 0:
